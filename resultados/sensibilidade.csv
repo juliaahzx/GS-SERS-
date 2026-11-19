@@ -1,0 +1,25 @@
+variavel,valor,alternativa,investimento,economia_ano1,payback_anos,custo_total_10a,custo_total_10a_A1_referencia
+FV: custo por Wp (R$),"3,40",A3,2779.64,910.18,3.4,15812.53,16546.46
+FV: custo por Wp (R$),"4,20",A3,3433.67,910.18,4.2,16466.56,16546.46
+FV: custo por Wp (R$),"5,50",A3,4496.47,910.18,5.5,17529.37,16546.46
+FV: custo por Wp (R$),"7,00",A3,5722.78,910.18,7.1,18755.68,16546.46
+FV: Fio B (R$/kWh),"0,10",A3,3433.67,943.38,4.1,16049.23,16546.46
+FV: Fio B (R$/kWh),"0,15",A3,3433.67,910.18,4.2,16466.56,16546.46
+FV: Fio B (R$/kWh),"0,25",A3,3433.67,843.78,4.6,17301.24,16546.46
+FV: autoconsumo simultâneo,10%,A3,3433.67,881.72,4.4,16824.28,16546.46
+FV: autoconsumo simultâneo,30%,A3,3433.67,910.18,4.2,16466.56,16546.46
+FV: autoconsumo simultâneo,50%,A3,3433.67,938.63,4.1,16108.85,16546.46
+Aquecedor: investimento (R$),5.000,A2,5000.0,706.84,9.0,20086.0,16546.46
+Aquecedor: investimento (R$),7.000,A2,7000.0,706.84,12.6,22086.0,16546.46
+Aquecedor: investimento (R$),9.000,A2,9000.0,706.84,16.2,24086.0,16546.46
+Aquecedor: fração solar,60%,A2,7000.0,605.86,15.4,23095.77,16546.46
+Aquecedor: fração solar,70%,A2,7000.0,706.84,12.6,22086.0,16546.46
+Aquecedor: fração solar,80%,A2,7000.0,807.82,10.6,21076.23,16546.46
+Moradores (1 banho de 8 min cada),2 (casa 136 kWh/mês),A2,7000.0,353.42,34.4,20571.34,13551.58
+Moradores (1 banho de 8 min cada),2 (casa 136 kWh/mês),A3,1716.83,455.09,4.8,14011.63,13551.58
+Moradores (1 banho de 8 min cada),4 (casa 180 kWh/mês),A2,7000.0,706.84,12.6,22086.0,16546.46
+Moradores (1 banho de 8 min cada),4 (casa 180 kWh/mês),A3,3433.67,910.18,4.2,16466.56,16546.46
+Moradores (1 banho de 8 min cada),6 (casa 224 kWh/mês),A2,7000.0,1259.25,6.3,23600.66,19541.35
+Moradores (1 banho de 8 min cada),6 (casa 224 kWh/mês),A3,5150.5,1564.26,3.5,18921.5,19541.35
+Tarifa Social (CadÚnico),sim,A2,7000.0,706.84,12.6,12906.27,7366.73
+Tarifa Social (CadÚnico),sim,A3,3433.67,910.18,4.2,7286.83,7366.73

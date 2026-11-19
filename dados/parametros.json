@@ -1,0 +1,295 @@
+{
+  "_sobre": "Parâmetros usados nos cálculos do módulo de energia do Citizen Assist AI. Cada item traz valor, unidade, tipo (real | estimado | premissa), fonte e observação. 'real' = valor publicado em fonte verificável; 'estimado' = calculado a partir de dados reais com uma hipótese explícita; 'premissa' = hipótese de cálculo escolhida pela equipe e que deve ser ajustada ao caso de cada usuário. Período de referência: 12 meses (nov/2026 a out/2027), horizonte de análise: 10 anos.",
+  "tarifa": {
+    "tusd_pre_reajuste": {
+      "valor": 0.43244,
+      "unidade": "R$/kWh (sem tributos)",
+      "tipo": "real",
+      "fonte": "R2",
+      "obs": "TUSD B1 residencial Enel SP vigente de jul/2025 a jul/2026, conforme faturas B1 publicadas."
+    },
+    "te_pre_reajuste": {
+      "valor": 0.29274,
+      "unidade": "R$/kWh (sem tributos)",
+      "tipo": "real",
+      "fonte": "R2",
+      "obs": "TE B1 residencial Enel SP vigente de jul/2025 a jul/2026, conforme faturas B1 publicadas."
+    },
+    "reajuste_residencial_2026": {
+      "valor": 0.0902,
+      "unidade": "fração",
+      "tipo": "real",
+      "fonte": "R1",
+      "obs": "Efeito médio do reajuste ANEEL 2026 para o segmento residencial da Enel SP, vigente desde 04/07/2026."
+    },
+    "pis_cofins_efetivo": {
+      "valor": 0.045,
+      "unidade": "fração do preço final",
+      "tipo": "estimado",
+      "fonte": "R2",
+      "obs": "Alíquota efetiva varia mês a mês (cerca de 4% a 6% nas faturas observadas). Usamos 4,5%."
+    },
+    "icms_faixas": {
+      "valor": [
+        [
+          90,
+          0.0
+        ],
+        [
+          200,
+          0.12
+        ],
+        [
+          999999,
+          0.18
+        ]
+      ],
+      "unidade": "[limite kWh/mês, alíquota]",
+      "tipo": "real",
+      "fonte": "R2",
+      "obs": "SP: isento até 90 kWh, 12% de 91 a 200 kWh e 18% acima de 200 kWh, conforme faturas observadas. A alíquota incide sobre todo o consumo do mês."
+    },
+    "bandeira_media_2026": {
+      "valor": 0.007854,
+      "unidade": "R$/kWh (sem tributos)",
+      "tipo": "estimado",
+      "fonte": "R3",
+      "obs": "Bandeira amarela (R$ 1,885 a cada 100 kWh) de maio a setembro/2026 e verde nos demais meses: 0,01885 x 5/12."
+    },
+    "custo_disponibilidade_kwh": {
+      "valor": {
+        "monofasico": 30,
+        "bifasico": 50,
+        "trifasico": 100
+      },
+      "unidade": "kWh/mês",
+      "tipo": "real",
+      "fonte": "R4",
+      "obs": "Consumo mínimo faturado (REN ANEEL 1.000/2021). Relevante para geração solar: a conta não fica abaixo disso."
+    }
+  },
+  "tarifa_social": {
+    "limite_gratuidade_kwh": {
+      "valor": 80,
+      "unidade": "kWh/mês",
+      "tipo": "real",
+      "fonte": "R5",
+      "obs": "Lei 15.235/2025: desconto de 100% até 80 kWh/mês para famílias do CadÚnico com renda per capita até 1/2 salário mínimo (e BPC). Acima de 80 kWh não há desconto."
+    },
+    "limite_desconto_social_kwh": {
+      "valor": 120,
+      "unidade": "kWh/mês",
+      "tipo": "real",
+      "fonte": "R5",
+      "obs": "Famílias com renda per capita entre 1/2 e 1 salário mínimo: isenção das quotas da CDE até 120 kWh. O valor da CDE na tarifa não foi modelado."
+    }
+  },
+  "consumo": {
+    "consumo_residencial_medio_brasil": {
+      "valor": 181.8,
+      "unidade": "kWh/mês",
+      "tipo": "real",
+      "fonte": "R6",
+      "obs": "Consumo residencial médio recorde da série EPE. Usado como ordem de grandeza da família de referência."
+    },
+    "consumo_familia_referencia": {
+      "valor": 180,
+      "unidade": "kWh/mês",
+      "tipo": "premissa",
+      "fonte": "R6",
+      "obs": "Família de 4 pessoas na Região Metropolitana de SP, próxima da média nacional."
+    },
+    "outros_consumos_referencia": {
+      "valor": 92,
+      "unidade": "kWh/mês",
+      "tipo": "premissa",
+      "fonte": "R6",
+      "obs": "Consumo da casa sem o chuveiro (180 - 88 kWh). Usado para estimar o total quando o usuário informa moradores/banho mas não o consumo da conta."
+    }
+  },
+  "chuveiro": {
+    "potencia_inverno_w": {
+      "valor": 5500,
+      "unidade": "W",
+      "tipo": "real",
+      "fonte": "R7",
+      "obs": "Potência típica de chuveiro elétrico (faixa de mercado 4.400 a 7.700 W)."
+    },
+    "potencia_verao_w": {
+      "valor": 3200,
+      "unidade": "W",
+      "tipo": "premissa",
+      "fonte": "R7",
+      "obs": "Potência típica da posição 'verão' de um chuveiro de 5.500 W. Conferir na etiqueta do aparelho."
+    },
+    "banhos_por_dia": {
+      "valor": 4,
+      "unidade": "banhos/dia",
+      "tipo": "premissa",
+      "fonte": "-",
+      "obs": "1 banho por morador, 4 moradores."
+    },
+    "minutos_por_banho": {
+      "valor": 8,
+      "unidade": "min",
+      "tipo": "premissa",
+      "fonte": "R7",
+      "obs": "Mesmo cenário usado em simulações públicas de consumo (4 banhos de 8 min/dia = 88 kWh/mês)."
+    }
+  },
+  "eficiencia": {
+    "minutos_por_banho_meta": {
+      "valor": 6,
+      "unidade": "min",
+      "tipo": "premissa",
+      "fonte": "-",
+      "obs": "Meta de redução de 2 minutos por banho."
+    },
+    "meses_posicao_verao": {
+      "valor": 6,
+      "unidade": "meses/ano",
+      "tipo": "premissa",
+      "fonte": "-",
+      "obs": "Posição verão de outubro a março."
+    },
+    "investimento": {
+      "valor": 0,
+      "unidade": "R$",
+      "tipo": "premissa",
+      "fonte": "-",
+      "obs": "Mudança de hábito, sem compra de equipamento."
+    }
+  },
+  "aquecedor_solar": {
+    "investimento": {
+      "valor": 7000,
+      "unidade": "R$",
+      "tipo": "estimado",
+      "fonte": "R8",
+      "obs": "Ponto médio da faixa de referência 2026 (R$ 5.000 a R$ 9.000) para sistema de ~300 L em casa já preparada."
+    },
+    "fracao_solar": {
+      "valor": 0.7,
+      "unidade": "fração da energia de aquecimento",
+      "tipo": "premissa",
+      "fonte": "R9",
+      "obs": "Parcela do aquecimento suprida pelo sol ao longo do ano; o chuveiro elétrico fica como apoio em dias nublados."
+    },
+    "manutencao_anual": {
+      "valor": 150,
+      "unidade": "R$/ano",
+      "tipo": "premissa",
+      "fonte": "-",
+      "obs": "Limpeza de coletores e verificação do reservatório."
+    },
+    "vida_util_anos": {
+      "valor": 15,
+      "unidade": "anos",
+      "tipo": "premissa",
+      "fonte": "-",
+      "obs": "Vida útil conservadora para coletores e reservatório."
+    }
+  },
+  "fotovoltaico": {
+    "hsp_sao_paulo": {
+      "valor": 4.6,
+      "unidade": "kWh/m².dia (horas de sol pleno)",
+      "tipo": "estimado",
+      "fonte": "R10",
+      "obs": "Faixa de 4,5 a 4,8 para a capital e Grande SP. Confirmar no SunData/CRESESB com as coordenadas do endereço."
+    },
+    "performance_ratio": {
+      "valor": 0.78,
+      "unidade": "fração",
+      "tipo": "premissa",
+      "fonte": "-",
+      "obs": "Perdas de temperatura, sujeira, cabos e inversor."
+    },
+    "potencia_modulo_wp": {
+      "valor": 550,
+      "unidade": "Wp",
+      "tipo": "premissa",
+      "fonte": "-",
+      "obs": "Módulo comercial comum."
+    },
+    "custo_por_wp": {
+      "valor": 4.2,
+      "unidade": "R$/Wp instalado",
+      "tipo": "estimado",
+      "fonte": "R11",
+      "obs": "Topo da faixa de 2026 (R$ 3,40 a R$ 4,20/Wp) porque sistemas muito pequenos custam mais por Wp. A média nacional (R$ 2,45/Wp) vale para sistemas maiores."
+    },
+    "fracao_autoconsumo": {
+      "valor": 0.3,
+      "unidade": "fração da geração",
+      "tipo": "premissa",
+      "fonte": "-",
+      "obs": "Banhos ocorrem de manhã cedo e à noite: a maior parte da geração é injetada na rede."
+    },
+    "fio_b": {
+      "valor": 0.15,
+      "unidade": "R$/kWh (sem tributos)",
+      "tipo": "estimado",
+      "fonte": "R12",
+      "obs": "Valor do Fio B da Enel SP não localizado em fonte pública; estimado em ~19% da tarifa, proporção semelhante à de outra distribuidora paulista. Sensibilidade: 0,10 a 0,25."
+    },
+    "fio_b_percentual_por_ano": {
+      "valor": {
+        "2026": 0.6,
+        "2027": 0.75,
+        "2028": 0.9,
+        "2029": 1.0
+      },
+      "unidade": "fração do Fio B não compensada",
+      "tipo": "real",
+      "fonte": "R12",
+      "obs": "Lei 14.300/2022, art. 27. A regra a partir de 2029 depende de regulamentação; usamos 100% (cenário conservador)."
+    },
+    "degradacao_anual": {
+      "valor": 0.005,
+      "unidade": "fração/ano",
+      "tipo": "premissa",
+      "fonte": "-",
+      "obs": "Perda de rendimento típica dos módulos."
+    },
+    "manutencao_anual": {
+      "valor": 100,
+      "unidade": "R$/ano",
+      "tipo": "premissa",
+      "fonte": "-",
+      "obs": "Limpeza dos módulos."
+    }
+  },
+  "ambiental": {
+    "fator_emissao_sin": {
+      "valor": 0.0385,
+      "unidade": "kgCO2/kWh",
+      "tipo": "real",
+      "fonte": "R13",
+      "obs": "Fator médio anual do SIN em 2023 (38,5 kg/MWh, MCTI). Fatores mensais de 2025 ficaram entre 21,5 e 28,9 kg/MWh com nova metodologia."
+    }
+  },
+  "cenarios": {
+    "ano_inicio": {
+      "valor": 2026,
+      "unidade": "ano",
+      "tipo": "premissa",
+      "fonte": "-",
+      "obs": "Instalação/mudança em nov/2026."
+    },
+    "horizonte_anos": {
+      "valor": 10,
+      "unidade": "anos",
+      "tipo": "premissa",
+      "fonte": "-",
+      "obs": "Horizonte comum para comparar alternativas."
+    },
+    "reajuste_tarifa_sensibilidade": {
+      "valor": 0.05,
+      "unidade": "fração/ano",
+      "tipo": "premissa",
+      "fonte": "R1",
+      "obs": "Cenário de sensibilidade com reajuste anual de 5%. O cenário base mantém a tarifa constante."
+    }
+  }
+}

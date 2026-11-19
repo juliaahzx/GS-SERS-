@@ -1,0 +1,13 @@
+aparelho,sinonimos,potencia_w,horas_dia,dias_mes,kwh_mes_fixo,tipo,fonte,obs
+chuveiro eletrico,chuveiro|ducha|banho,5500,0.5333,30,,premissa,R7,4 banhos de 8 min por dia na posição inverno
+geladeira frost free,geladeira|refrigerador|frost free|frost-free,,,,40,real,R7,consumo pela etiqueta INMETRO (fica ligada 24 h)
+geladeira 1 porta,geladeira simples|geladeira 1 porta|geladeira antiga,,,,25.2,real,R7,valor médio Eletrobrás citado pelo Idec
+ar-condicionado 9000 btu,ar condicionado|ar-condicionado|split|ar,900,4,30,,premissa,R7,modelos inverter tendem a consumir menos
+lampada led 9 w,lampada led|led|lampada|lampadas,9,5,30,,premissa,R7,por lâmpada
+lampada incandescente 60 w,incandescente|incandescentes|lampada antiga|lampada amarela|lampadas incandescentes,60,5,30,,premissa,R7,por lâmpada (troca por LED economiza ~85%)
+televisao led 42,tv|televisao|televisor,90,5,30,,premissa,R7,
+maquina de lavar,maquina de lavar|lavadora|maquina de roupa,500,1,12,,premissa,R7,cerca de 3 lavagens por semana
+ferro de passar,ferro|ferro de passar,1200,1,12,,premissa,R7,cerca de 3 vezes por semana
+micro-ondas,microondas|micro-ondas|micro ondas,1200,0.25,30,,premissa,R7,
+computador de mesa,computador|pc|desktop,150,4,30,,premissa,R7,um notebook consome bem menos (cerca de 50 W)
+ventilador,ventilador,100,8,30,,premissa,R7,

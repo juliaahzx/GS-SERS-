@@ -1,0 +1,3 @@
+# O assistente usa apenas a biblioteca padrão do Python (3.10+).
+# Opcional: gráficos da análise (analise/gerar_analise.py)
+matplotlib>=3.7

@@ -1,0 +1,7 @@
+id,nome,renovavel,detalhe,chuveiro_kwh_mes,consumo_casa_kwh_mes,conta_mes_ano1,economia_mes_ano1,economia_ano1,investimento,manutencao_anual,payback_anos,custo_total_10a_base,custo_total_10a_reajuste,kwh_evitados_ano,co2_evitado_kg_ano
+A0,Situação atual (chuveiro elétrico),False,4 banhos/dia de 8 min a 5500 W,88.0,180.0,172.12,0.0,0.0,0.0,0.0,0.0,20654.39,25978.87,0.0,0.0
+A1,Eficiência: banho mais curto + posição verão,False,banho de 6 min e posição verão 6 meses/ano,52.2,144.2,137.89,34.23,410.79,0.0,0.0,0.0,16546.46,20811.96,429.6,16.5
+A2,Aquecedor solar de água – solar térmico,True,sol fornece ~70% do aquecimento; chuveiro fica como apoio,26.4,118.4,113.22,58.9,706.84,7000.0,150.0,12.6,22086.0,25588.32,739.2,28.5
+A3,Painéis fotovoltaicos – solar elétrico,True,"0.82 kWp (~2 módulos de 550 Wp), geração ~88 kWh/mês",88.0,180.0,96.27,75.85,910.18,3433.67,100.0,4.2,16466.56,19601.48,1056.0,40.7
+A4,Combinação: hábitos (A1) + aquecedor solar (A2),True,menos tempo de banho e água pré-aquecida pelo sol,15.7,107.7,102.95,69.17,830.08,7000.0,150.0,10.3,20853.62,24038.25,868.1,33.4
+A5,Combinação: hábitos (A1) + fotovoltaico menor (A3),True,"0.48 kWp, dimensionado para o consumo do chuveiro já reduzido (52 kWh/mês)",52.2,144.2,92.9,79.22,950.69,2036.79,100.0,2.4,14469.14,17435.83,1056.0,40.7
