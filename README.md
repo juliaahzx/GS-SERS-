@@ -107,4 +107,4 @@ tests/                 testes automatizados
 
 ## Links
 
-* Vídeo técnico (YouTube, não listado): 
+* Vídeo técnico: https://youtu.be/fxxCmA6E4XM
