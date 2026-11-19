@@ -10,7 +10,6 @@
 | Nome | RM |
 |---|---|
 | Julia Nunes Frederici | 569858 |
-| _(adicionar demais integrantes, se houver)_ | |
 
 ## Público e problema
 
@@ -108,4 +107,4 @@ tests/                 testes automatizados
 
 ## Links
 
-* Vídeo técnico (YouTube, não listado): _adicionar link_
+* Vídeo técnico (YouTube, não listado): 
